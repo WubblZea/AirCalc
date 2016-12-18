@@ -195,12 +195,7 @@ public class BuilderFrame extends JFrame implements ActionListener
 	}
 	
  }
-/*
- public void closeTab()
- {
- 	tpBuilder.closeTab()
- }
-*/
+
  public void actionPerformed(ActionEvent e)
  {
  	String input0,input1,input2 = new String();
