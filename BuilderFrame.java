@@ -4,8 +4,6 @@ import java.awt.geom.*;
 import javax.swing.*;
 import javax.swing.border.*;
 import javax.swing.UIManager.*;
-//import java.util.Timer;
-//import java.util.TimerTask;
 
 public class BuilderFrame extends JFrame implements ActionListener
 {
@@ -79,14 +77,12 @@ public class BuilderFrame extends JFrame implements ActionListener
 	scrlWorkspace.setLocation(16,100);
 	scrlWorkspace.setSize(640,480);
 	scrlWorkspace.setBorder(BorderFactory.createEtchedBorder(EtchedBorder.LOWERED));
-	//// The line below appears to not be an available symbol for JPanel 
-	// pnlWorkspace.setLocationRelativeTo(null);
+
 	scrlWorkspace.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 	scrlWorkspace.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS); 
 
 	pnlWorkspace.setPreferredSize(new Dimension(1280, 960));
 	pnlWorkspace.setLayout(null);
-	//pnlWorkspace.setLocation(0,0);
 
 	
 	scrlWorkspace.setViewportView(pnlWorkspace);
@@ -164,7 +160,6 @@ public class BuilderFrame extends JFrame implements ActionListener
 	lblFoundArea.setLocation(700, 500);
 	lblFoundArea.setSize(100,24);
 	lblFoundArea.setText("Area: 10000m\u00B2");
-	//pnlBuild.add(lblFoundArea);
 
  }
  
