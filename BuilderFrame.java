@@ -51,9 +51,14 @@ public class BuilderFrame extends JFrame implements ActionListener
 	initBuildPanel();
 
 	tpBuilder.add(pnlBuild, "Room Builder");
+
+	pnlPricingPanel = new PricingPanel(); 
+
+	tpBuilder.add(pnlPricingPanel, "Pricing");
 	this.add(tpBuilder);
 
-	this.setTitle("Room Builder Prototype");
+
+	this.setTitle("Room Builder $(BuildNumber)");
 	this.setSize(840,640);
 	this.setVisible(true);
 	this.setResizable(false);

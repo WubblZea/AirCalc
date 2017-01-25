@@ -216,7 +216,7 @@ public class PricingPanel extends JPanel implements ActionListener
 		btnSetAttr.setLocation(0,0);
 		btnSetAttr.setSize(100,50);
 		btnSetAttr.addActionListener(this);
-		btnSetAttr.setText("Debugging");
+		btnSetAttr.setText("Set Values");
 		if (bDebugging) {this.add(btnSetAttr);}
 
 		pnlCarpet.setLocation(150,100);
@@ -265,9 +265,110 @@ public class PricingPanel extends JPanel implements ActionListener
 		if(e.getSource() == btnSetAttr)
 		{
 
-			dArea = Double.parseDouble(JOptionPane.showInputDialog("Enter Area(m\u00B2):"));
-			dLongestSide = Double.parseDouble(JOptionPane.showInputDialog("Enter Longest Side(m):"));
-			dWidth = Double.parseDouble(JOptionPane.showInputDialog("Enter Parallel Width(m):"));
+
+			boolean result=true;
+			String sArea = JOptionPane.showInputDialog("Enter Area(m\u00B2):");
+			if (!(sArea.isEmpty())||(sArea==null))
+			{
+				for (int i = 0 ; i<sArea.length() ; i++)
+				{
+					if ((!(Character.isDigit(sArea.charAt(i))||sArea.charAt(i)=='.'))||(sArea.charAt(i)=='d')||(sArea.charAt(i)=='f'))
+					{
+						JOptionPane.showMessageDialog(null, "Error: input of Area was NaN - Set to 0");
+						result=false;
+						break;
+						
+					}
+					else
+					{
+						result=true;
+					}
+				}
+			}
+			else
+			{
+				JOptionPane.showMessageDialog(null, "Error: Nothing was entered for Area");
+				result=false;
+			}
+			
+
+
+			if (result)
+			{
+				dArea = Double.parseDouble(sArea);
+			}
+			else
+			{
+				dArea = 0;
+			}
+
+			result=true;
+			String sLongestSide = JOptionPane.showInputDialog("Enter Longest Side(m):");
+			if (!(sLongestSide.isEmpty())||(sLongestSide==null))
+			{
+				for (int i = 0 ; i<sLongestSide.length() ; i++)
+				{
+					if ((!(Character.isDigit(sLongestSide.charAt(i))||sLongestSide.charAt(i)=='.'))||(sLongestSide.charAt(i)=='d')||(sLongestSide.charAt(i)=='f'))
+					{
+						JOptionPane.showMessageDialog(null, "Error: input of Longest Side was NaN - Set to 0");
+						result=false;
+						break;
+						
+					}
+					else
+					{
+						result=true;
+					}
+				}
+			}
+			else
+			{
+				JOptionPane.showMessageDialog(null, "Error: Nothing was entered for Longest Side");
+				result=false;
+			}
+
+			if (result)
+			{
+				dLongestSide = Double.parseDouble(sLongestSide);
+			}
+			else
+			{
+				dLongestSide = 0;
+			}
+			
+			result=true;
+			String sWidth = JOptionPane.showInputDialog("Enter Parallel Width(m):");
+			if (!(sWidth.isEmpty())||(sWidth==null))
+			{
+				for (int i = 0 ; i<sWidth.length() ; i++)
+				{
+					if ((!(Character.isDigit(sWidth.charAt(i))||sWidth.charAt(i)=='.'))||(sWidth.charAt(i)=='d')||(sWidth.charAt(i)=='f'))
+					{
+						JOptionPane.showMessageDialog(null, "Error: input of Width was NaN");
+						result=false;
+						break;
+					}
+					else
+					{
+						result=true;
+					}
+				}
+			}
+			else
+			{
+				JOptionPane.showMessageDialog(null, "Error: Nothing was entered for Width.");
+				result=false;
+			}
+
+
+			if (result)
+			{
+				dWidth = Double.parseDouble(sWidth);
+			}
+			else
+			{
+				dWidth = 0;
+			}
 
 			lblArea.setText("Area: " + dArea + "m\u00B2");
 
