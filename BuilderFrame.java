@@ -70,15 +70,10 @@ public class BuilderFrame extends JFrame implements ActionListener
  public void initBuildPanel()
  {
  
- 	btnSave.setText("Save");
+ 	btnSave.setText("Save/Load");
  	btnSave.setLocation(0,0);
-	btnSave.setSize(80,32);
+	btnSave.setSize(100,50);
 	pnlBuild.add(btnSave);
-	
-	btnLoad.setText("Load");
-	btnLoad.setLocation(0,32);
-	btnLoad.setSize(80,32);
-	pnlBuild.add(btnLoad);
 
 	scrlWorkspace.setLocation(16,100);
 	scrlWorkspace.setSize(640,480);
