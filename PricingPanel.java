@@ -259,7 +259,7 @@ public class PricingPanel extends JPanel implements ActionListener
 		
 	}
 
-	@Override
+	//@Override
 	public void actionPerformed(ActionEvent e)
 	{
 		if(e.getSource() == btnSetAttr)

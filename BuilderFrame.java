@@ -7,39 +7,40 @@ import javax.swing.UIManager.*;
 
 public class BuilderFrame extends JFrame implements ActionListener
 {
-	double PI = 3.141592653589793;
+	private final double PI = 3.141592653589793;
+	private final String sLAF = "nimbus";
 
-	JTabbedPane tpBuilder = new JTabbedPane();
+	private JTabbedPane tpBuilder = new JTabbedPane();
 
-	JPanel pnlBuild = new JPanel(null); //layout
+	private JPanel pnlBuild = new JPanel(null); //layout
 
- 	JPanel pnlWorkspace = new JPanel();
- 	JScrollPane scrlWorkspace = new JScrollPane(pnlWorkspace);
+ 	private JPanel pnlWorkspace = new JPanel();
+ 	private JScrollPane scrlWorkspace = new JScrollPane(pnlWorkspace);
 	
-	JButton btnSave = new JButton();
-	JButton btnLoad = new JButton();
+	private JButton btnSave = new JButton();
+	private JButton btnLoad = new JButton();
 
-	JLabel lblRectShape = new JLabel();
-	JButton btnRectUp = new JButton();
-	JButton btnRectDown = new JButton();
-	JButton btnRectLeft = new JButton();
-	JButton btnRectRight = new JButton();
+	private JLabel lblRectShape = new JLabel();
+	private JButton btnRectUp = new JButton();
+	private JButton btnRectDown = new JButton();
+	private JButton btnRectLeft = new JButton();
+	private JButton btnRectRight = new JButton();
 
-	JLabel lblCrlShape = new JLabel();
-	JButton btnCrlUp = new JButton();
-	JButton btnCrlDown = new JButton();
-	JButton btnCrlRight = new JButton();
-	JButton btnCrlLeft = new JButton();
+	private JLabel lblCrlShape = new JLabel();
+	private JButton btnCrlUp = new JButton();
+	private JButton btnCrlDown = new JButton();
+	private JButton btnCrlRight = new JButton();
+	private JButton btnCrlLeft = new JButton();
 
-	JLabel lblFoundArea = new JLabel();
+	private JLabel lblFoundArea = new JLabel();
 
-	int iShapeCount = 0;
-	JButton shpOnWorkspace[] = new JButton[255];
+	private int iShapeCount = 0;
+	private JButton[] shpOnWorkspace = new JButton[255];
 
-	double dArea = 0;
-	double dLongestSide = 0;
-	double dWidth = 0;
-	PricingPanel pnlPricingPanel;
+	private double dArea = 0;
+	private double dLongestSide = 0;
+	private double dWidth = 0;
+	private PricingPanel pnlPricingPanel;
 
 
  public void startGUI()
@@ -94,6 +95,8 @@ public class BuilderFrame extends JFrame implements ActionListener
 	pnlBuild.add(scrlWorkspace, pnlWorkspace);
 
 
+	String[] strBtnFont = {"<html><font size=\"4\">", "<\\font><\\html>"};
+
 	lblRectShape.setLocation(665,100);
 	lblRectShape.setSize(175,32);
 	lblRectShape.setOpaque(true);
@@ -109,56 +112,56 @@ public class BuilderFrame extends JFrame implements ActionListener
 	btnRectUp.setLocation(725,133);
 	btnRectUp.setSize(25,25);
 	btnRectUp.addActionListener(this);
-	btnRectUp.setText("\u21E7");
+	btnRectUp.setText(strBtnFont[0] + "\u21E7" + strBtnFont[1]);
 	btnRectUp.setMargin(new Insets(0, 0, 0, 0));
 	pnlBuild.add(btnRectUp);
 
 	btnRectDown.setLocation(725,181);
 	btnRectDown.setSize(25,25);
 	btnRectDown.addActionListener(this);
-	btnRectDown.setText("\u21E9");
+	btnRectDown.setText(strBtnFont[0] + "\u21E9" + strBtnFont[1]);
 	btnRectDown.setMargin(new Insets(0, 0, 0, 0));
 	pnlBuild.add(btnRectDown);
 
 	btnRectLeft.setLocation(701,157);
 	btnRectLeft.setSize(25,25);
 	btnRectLeft.addActionListener(this);
-	btnRectLeft.setText("\u21E6");
+	btnRectLeft.setText(strBtnFont[0] + "\u21E6" + strBtnFont[1]);
 	btnRectLeft.setMargin(new Insets(0, 0, 0, 0));
 	pnlBuild.add(btnRectLeft);
 
 	btnRectRight.setLocation(749,157);
 	btnRectRight.setSize(25,25);
 	btnRectRight.addActionListener(this);
-	btnRectRight.setText("\u21E8");
+	btnRectRight.setText(strBtnFont[0] + "\u21E8" + strBtnFont[1]);
 	btnRectRight.setMargin(new Insets(0, 0, 0, 0));
 	pnlBuild.add(btnRectRight);
 
 	btnCrlUp.setLocation(725,265);
 	btnCrlUp.setSize(25,25);
 	btnCrlUp.addActionListener(this);
-	btnCrlUp.setText("\u21E7");
+	btnCrlUp.setText(strBtnFont[0] + "\u21E7" + strBtnFont[1]);
 	btnCrlUp.setMargin(new Insets(0, 0, 0, 0));
 	pnlBuild.add(btnCrlUp);
 
 	btnCrlDown.setLocation(725,313);
 	btnCrlDown.setSize(25,25);
 	btnCrlDown.addActionListener(this);
-	btnCrlDown.setText("\u21E9");
+	btnCrlDown.setText(strBtnFont[0] + "\u21E9" + strBtnFont[1]);
 	btnCrlDown.setMargin(new Insets(0, 0, 0, 0));
 	pnlBuild.add(btnCrlDown);
 
 	btnCrlLeft.setLocation(701,289);
 	btnCrlLeft.setSize(25,25);
 	btnCrlLeft.addActionListener(this);
-	btnCrlLeft.setText("\u21E6");
+	btnCrlLeft.setText(strBtnFont[0] + "\u21E6" + strBtnFont[1]);
 	btnCrlLeft.setMargin(new Insets(0, 0, 0, 0));
 	pnlBuild.add(btnCrlLeft);
 
 	btnCrlRight.setLocation(749,289);
 	btnCrlRight.setSize(25,25);
 	btnCrlRight.addActionListener(this);
-	btnCrlRight.setText("\u21E8");
+	btnCrlRight.setText(strBtnFont[0] + "\u21E8" + strBtnFont[1]);
 	btnCrlRight.setMargin(new Insets(0, 0, 0, 0));
 	pnlBuild.add(btnCrlRight);
 
@@ -174,20 +177,34 @@ public class BuilderFrame extends JFrame implements ActionListener
 	{
 		for (LookAndFeelInfo info : UIManager.getInstalledLookAndFeels())
 		{
-			//Set Windows Look and feel if it is available (for Windows)
-			if ("Windows".equals(info.getName()))
+			if (sLAF.equals("sys"))
 			{
-				UIManager.setLookAndFeel(info.getClassName());
-				break;
+				//Set Windows Look and feel if it is available (for Windows)
+				if ("Windows".equals(info.getName()))
+				{
+					UIManager.setLookAndFeel(info.getClassName());
+					break;
+				}
+				//Set GTK2,3,4 Look and feel if it is available (for Linux)
+				if ("GTK+".equals(info.getName()))
+				{
+					UIManager.setLookAndFeel(info.getClassName());
+					break;
+				}
+				
+
 			}
-			//Set GTK2,3,4 Look and feel if it is available (for Linux)
-			if ("GTK+".equals(info.getName()))
+			else if (sLAF.equals("nimbus")) 
 			{
-				UIManager.setLookAndFeel(info.getClassName());
-				break;
+				if ("Nimbus".equals(info.getName()))
+				{
+					UIManager.setLookAndFeel(info.getClassName());
+					break;
+				}
 			}
 			
 		}
+
 	}
 	catch (Exception e)
 	{
@@ -267,6 +284,7 @@ public class BuilderFrame extends JFrame implements ActionListener
 				shpOnWorkspace[iShapeCount].setSize(iInput1*10,iInput2*10);
 				shpOnWorkspace[iShapeCount].setIcon(null);
 				pnlWorkspace.add(shpOnWorkspace[iShapeCount]);
+				pnlWorkspace.repaint();
 				dArea = Math.round(Double.parseDouble(input1) * Double.parseDouble(input2) * 10000.0)/10000.0;
 				iShapeCount++;
 			}
@@ -279,12 +297,14 @@ public class BuilderFrame extends JFrame implements ActionListener
 				shpOnWorkspace[iShapeCount].setSize(iInput1*5,iInput2*5);
 				shpOnWorkspace[iShapeCount].setIcon(null);
 				pnlWorkspace.add(shpOnWorkspace[iShapeCount]);
+				pnlWorkspace.repaint();
 				dArea = Math.round(PI * Double.parseDouble(input1) * Double.parseDouble(input2) * 10000.0)/10000.0;
 				iShapeCount++;
 			}
 		}
 		else
 		{
+			/*
 			if(input0.equals("rect"))
 			{
 
@@ -295,15 +315,19 @@ public class BuilderFrame extends JFrame implements ActionListener
 				
 				iShapeCount++;
 			}
+			*/
+			JOptionPane.showMessageDialog(null, "This still needs fixing:\n\n Shape count was not increased as system was unable to locate initial shape");
 		}
 	}
 
+
+	/*
 	int tmpIntTabCount = tpBuilder.getTabCount();
 	if(dArea!=0)
 	{		
 		if(tmpIntTabCount>2)
 		{
-			System.out.println("An Exception occured in the tab count but was not thrown");
+			System.out.println("Too many tabs");
 		}
 		if(tmpIntTabCount<2)
 		{
@@ -319,6 +343,7 @@ public class BuilderFrame extends JFrame implements ActionListener
 			tpBuilder.remove(1);
 		}
 	}
+	*/
 	
  }
  
