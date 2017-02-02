@@ -268,7 +268,7 @@ public class PricingPanel extends JPanel implements ActionListener
 
 			boolean result=true;
 			String sArea = JOptionPane.showInputDialog("Enter Area(m\u00B2):");
-			if (!(sArea==null))
+			if (!(sArea.isEmpty()))
 			{
 				for (int i = 0 ; i<sArea.length() ; i++)
 				{
@@ -281,7 +281,7 @@ public class PricingPanel extends JPanel implements ActionListener
 					}
 					else
 					{
-						result=true;
+						
 					}
 				}
 			}
@@ -304,7 +304,7 @@ public class PricingPanel extends JPanel implements ActionListener
 
 			result=true;
 			String sLongestSide = JOptionPane.showInputDialog("Enter Longest Side(m):");
-			if (!(sLongestSide==null))
+			if (!(sLongestSide.isEmpty()))
 			{
 				for (int i = 0 ; i<sLongestSide.length() ; i++)
 				{
@@ -317,7 +317,7 @@ public class PricingPanel extends JPanel implements ActionListener
 					}
 					else
 					{
-						result=true;
+						
 					}
 				}
 			}
@@ -338,7 +338,7 @@ public class PricingPanel extends JPanel implements ActionListener
 			
 			result=true;
 			String sWidth = JOptionPane.showInputDialog("Enter Parallel Width(m):");
-			if (!(sWidth==null))
+			if (!(sWidth.isEmpty()))
 			{
 				for (int i = 0 ; i<sWidth.length() ; i++)
 				{
@@ -350,7 +350,7 @@ public class PricingPanel extends JPanel implements ActionListener
 					}
 					else
 					{
-						result=true;
+						
 					}
 				}
 			}
