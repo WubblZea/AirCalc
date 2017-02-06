@@ -7,12 +7,14 @@ import javax.swing.UIManager.*;
 
 public class BuilderFrame extends JFrame implements ActionListener
 {
+	String BUILD="1";
 	private final double PI = 3.141592653589793;
 	private final String sLAF = "nimbus";
 
 	private JTabbedPane tpBuilder = new JTabbedPane();
+	private ImageIcon imgTray = new ImageIcon("assets/icon.png");
 
-	private JPanel pnlBuild = new JPanel(null); //layout
+	private JPanel pnlBuild = new JPanel(null);
 
  	private JPanel pnlWorkspace = new JPanel();
  	private JScrollPane scrlWorkspace = new JScrollPane(pnlWorkspace);
@@ -59,7 +61,8 @@ public class BuilderFrame extends JFrame implements ActionListener
 	this.add(tpBuilder);
 
 
-	this.setTitle("Room Builder $(BuildNumber)");
+	this.setTitle("AirCalc Build "+BUILD+"\u03B1");
+	this.setIconImage(imgTray.getImage());
 	this.setSize(840,640);
 	this.setVisible(true);
 	this.setResizable(false);
@@ -90,7 +93,7 @@ public class BuilderFrame extends JFrame implements ActionListener
 	pnlBuild.add(scrlWorkspace, pnlWorkspace);
 
 
-	String[] strBtnFont = {"<html><font size=\"4\">", "<\\font><\\html>"};
+	String[] strBtnFont = {"<html><font size=\"4\">", ""};
 
 	lblRectShape.setLocation(665,100);
 	lblRectShape.setSize(175,32);
@@ -162,7 +165,8 @@ public class BuilderFrame extends JFrame implements ActionListener
 
 	lblFoundArea.setLocation(700, 500);
 	lblFoundArea.setSize(100,24);
-	lblFoundArea.setText("Area: 10000m\u00B2");
+	lblFoundArea.setText("Area: -1m\u00B2");
+	pnlBuild.add(lblFoundArea);
 
  }
  
@@ -186,7 +190,7 @@ public class BuilderFrame extends JFrame implements ActionListener
 					UIManager.setLookAndFeel(info.getClassName());
 					break;
 				}
-				
+				//Then let macOS do its own thing
 
 			}
 			else if (sLAF.equals("nimbus")) 

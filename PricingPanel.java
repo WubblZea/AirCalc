@@ -73,7 +73,7 @@ public class PricingPanel extends JPanel implements ActionListener
 		lblPricePerMetre.setLocation(5,48);
 		lblPricePerMetre.setSize(125,24);
 		lblPricePerMetre.setOpaque(true);
-		lblPricePerMetre.setText("Price Per Metre/£:");
+		lblPricePerMetre.setText("Price Per Metre/\u00A3:");
 		pnlCarpet.add(lblPricePerMetre);
 
 		tfPricePerMetre.setLocation(132,48);
@@ -110,7 +110,7 @@ public class PricingPanel extends JPanel implements ActionListener
 		lblCarpetCost.setLocation(5,158);
 		lblCarpetCost.setSize(125,24);
 		lblCarpetCost.setOpaque(true);
-		lblCarpetCost.setText("Cost/£:");
+		lblCarpetCost.setText("Cost/\u00A4:");
 		pnlCarpet.add(lblCarpetCost);
 
 		tfCarpetCost.setLocation(132,158);
@@ -132,7 +132,7 @@ public class PricingPanel extends JPanel implements ActionListener
 		lblPricePerMetreSquare.setLocation(5,48);
 		lblPricePerMetreSquare.setSize(125,24);
 		lblPricePerMetreSquare.setOpaque(true);
-		lblPricePerMetreSquare.setText("Price Per Metre\u00B2/£:");
+		lblPricePerMetreSquare.setText("Price Per Metre\u00B2/\u00A3:");
 		pnlTiles.add(lblPricePerMetreSquare);
 
 		tfPricePerMetreSquare.setLocation(132,48);
@@ -181,7 +181,7 @@ public class PricingPanel extends JPanel implements ActionListener
 		lblTileCost.setLocation(5,188);
 		lblTileCost.setSize(125,24);
 		lblTileCost.setOpaque(true);
-		lblTileCost.setText("Cost/£:");
+		lblTileCost.setText("Cost/\u00B2:");
 		pnlTiles.add(lblTileCost);
 
 		tfTileCost.setLocation(132,188);
@@ -198,7 +198,7 @@ public class PricingPanel extends JPanel implements ActionListener
 		lblArea.setLocation(0,100);
 		lblArea.setSize(148,24);
 		lblArea.setOpaque(true);
-		lblArea.setText("Area: " + dArea + "m\u00B2");
+		lblArea.setText("Area: " + dArea + "m\u00A3");
 		this.add(lblArea);
 
 		lblLongestSide.setLocation(0,128);
