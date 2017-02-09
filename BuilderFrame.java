@@ -7,9 +7,10 @@ import javax.swing.UIManager.*;
 
 public class BuilderFrame extends JFrame implements ActionListener
 {
-	String BUILD="1";
+	String BUILD="2";
 	private final double PI = 3.141592653589793;
 	private final String sLAF = "nimbus";
+	private String sLogin;
 
 	private JTabbedPane tpBuilder = new JTabbedPane();
 	private ImageIcon imgTray = new ImageIcon("assets/icon.png");
@@ -44,28 +45,50 @@ public class BuilderFrame extends JFrame implements ActionListener
 	private double dWidth = 0;
 	private PricingPanel pnlPricingPanel;
 
+	public BuilderFrame(String tmpSLogin)
+	{
+		sLogin = tmpSLogin;
+	}
+
+	public BuilderFrame()
+	{
+		sLogin = null;
+	}
+
 
  public void startGUI()
  {
- 
-	this.setLayout(new GridLayout(1,1));
-	this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);	
+ 	if(sLogin == null)
+ 	{
+ 		JOptionPane.showMessageDialog(null, "Login was invalid. Program will now exit");
+ 		System.exit(0);
+ 	}
+ 	else
+ 	{
+ 		if(sLogin.equals("invalid"))
+ 		{
+ 			JOptionPane.showMessageDialog(null, "Login was invalid. Program will now exit");
+ 			System.exit(0);
+ 		}
+		this.setLayout(new GridLayout(1,1));
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);	
 
-	initBuildPanel();
+		initBuildPanel();
 
-	tpBuilder.add(pnlBuild, "Room Builder");
+		tpBuilder.add(pnlBuild, "Room Builder");
 
-	pnlPricingPanel = new PricingPanel(); 
+		pnlPricingPanel = new PricingPanel(); 
 
-	tpBuilder.add(pnlPricingPanel, "Pricing");
-	this.add(tpBuilder);
+		tpBuilder.add(pnlPricingPanel, "Pricing");
+		this.add(tpBuilder);
 
 
-	this.setTitle("AirCalc Build "+BUILD+"\u03B1");
-	this.setIconImage(imgTray.getImage());
-	this.setSize(840,640);
-	this.setVisible(true);
-	this.setResizable(false);
+		this.setTitle("AirCalc Build "+BUILD+"\u03B1");
+		this.setIconImage(imgTray.getImage());
+		this.setSize(840,640);
+		this.setVisible(true);
+		this.setResizable(false);
+	}
  }
 
 
