@@ -1,3 +1,3 @@
-javac BuilderFrame.java
-java BuilderFrame
+javac *.java
+java Main
 pause
